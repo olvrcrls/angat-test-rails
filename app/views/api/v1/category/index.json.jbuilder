@@ -1,4 +1,4 @@
-json.results @categories.each do |category|
+json.array! @categories.each do |category|
 	json.Id category.id
 	json.Name category.name
 	json.Verticals category.vertical_id

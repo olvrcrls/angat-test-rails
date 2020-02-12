@@ -1,4 +1,4 @@
-json.results @courses.each do |course|
+json.array! @courses.each do |course|
 	json.Id course.id
 	json.Name course.name
 	json.Author course.author

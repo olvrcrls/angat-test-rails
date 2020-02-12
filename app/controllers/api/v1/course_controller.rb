@@ -1,4 +1,6 @@
 class Api::V1::CourseController < ApplicationController
+	skip_before_action :verify_authenticity_token
+	
 	def index
 		@courses = Course.all
 		render :index, :status => 200
@@ -6,16 +8,17 @@ class Api::V1::CourseController < ApplicationController
 
 
 	def create
-		@course = Course.new(course_params)
-		render :show, :status => 200
+		@course = Course.create!(course_params)
+		render :create, :status => 200
 	rescue StandardError => e
 		puts e
 		render_error
 	end
 
 	def update
-		@course = Course.find_by!(id: params[:id]).update!(course_params)
-		render :show, :status => 200
+		@course = Course.find_by!(id: params[:id])
+		@course.update!(course_params)
+		render :update, :status => 200
 	rescue StandardError => e
 		puts e
 		render_error
