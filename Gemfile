@@ -13,8 +13,13 @@ gem 'pg', '~> 1.2', '>= 1.2.2'
 # Faker gem for Database seeding
 gem 'faker', '~> 2.10', '>= 2.10.1'
 
-# Gemfile for OAuth
-gem 'doorkeeper'
+#Authentication
+gem 'devise', '~> 4.7', '>= 4.7.1'
+
+# OAuths
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
