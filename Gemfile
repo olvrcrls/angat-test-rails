@@ -18,7 +18,6 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # OAuths
 gem 'omniauth-google-oauth2'
-gem 'omniauth-facebook'
 
 
 # Use sqlite3 as the database for Active Record
