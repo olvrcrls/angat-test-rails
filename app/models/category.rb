@@ -6,6 +6,7 @@ class Category < ApplicationRecord
 
 	validates :name, uniqueness: true
 	belongs_to :vertical
+	has_many :courses
 
 	def check_name
 		if Vertical.exists?(name: self.name)
