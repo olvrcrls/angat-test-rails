@@ -1,6 +1,7 @@
 class Api::V1::CourseController < ApplicationController
 	skip_before_action :verify_authenticity_token
-	
+	before_action :authenticate_user!
+
 	def index
 		@courses = Course.all
 		render :index, :status => 200

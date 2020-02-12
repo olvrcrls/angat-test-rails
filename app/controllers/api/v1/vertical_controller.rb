@@ -1,5 +1,6 @@
 class Api::V1::VerticalController < ApplicationController
 	skip_before_action :verify_authenticity_token
+	before_action :authenticate_user!
 
 	def index
 		@verticals = Vertical.all

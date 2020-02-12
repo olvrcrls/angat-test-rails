@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
+	before_action :authenticate_user!
 	def home
-		return "Hello"
+		
 	end
 end
