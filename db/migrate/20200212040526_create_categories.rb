@@ -3,7 +3,7 @@ class CreateCategories < ActiveRecord::Migration[6.0]
     create_table :categories do |t|
       t.string :name, :unique => true
       t.integer :vertical_id
-      t.string :state
+      t.string :state, :default => 'active'
 
       t.timestamps
     end

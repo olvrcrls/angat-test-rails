@@ -4,7 +4,7 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :author
       t.integer :category_id
-      t.string :state
+      t.string :state, :default => 'active'
 
       t.timestamps
     end
