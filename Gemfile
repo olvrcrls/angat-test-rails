@@ -17,7 +17,7 @@ gem 'faker', '~> 2.10', '>= 2.10.1'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # OAuths
-gem 'omniauth-google-oauth2'
+gem 'omniauth-google'
 
 
 # Use sqlite3 as the database for Active Record
