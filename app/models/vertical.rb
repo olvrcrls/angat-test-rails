@@ -1,4 +1,6 @@
 class Vertical < ApplicationRecord
+	before_save :check_name
+
 	self.table_name = 'verticals'
 	self.primary_key = 'id'
 
@@ -6,10 +8,11 @@ class Vertical < ApplicationRecord
 
 	has_many :categories
 
-	before_save do
-		existing_category = Category.find_by(name: self.name)
-		return false if !existing_category.nil?
-
-		true
+	def check_name
+		if Category.exists?(name: self.name)
+			throw :abort
+		else
+			true
+		end
 	end
 end
